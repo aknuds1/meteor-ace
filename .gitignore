@@ -1,0 +1,6 @@
+src/client/components/
+src/packages/
+node_modules/
+.idea/workspace.xml
+.idea/*.iws
+.idea/tasks.xml
