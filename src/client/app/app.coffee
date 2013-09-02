@@ -1,13 +1,9 @@
-require(["angular", "ngMeteor", "underscore"], (angular, ngMeteor, _) ->
-  angular.element(document).ready(->
-    angular.bootstrap(document, ['app'])
-  )
-
+require(["angular", "underscore"], (angular, _) ->
   homeUrl = "/"
 
-  app = angular.module('app', ['ngMeteor', 'ui.ace'],
+  app = angular.module('meteorapp', ['meteor', 'ui.ace'],
     ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-      $routeProvider.when(homeUrl, templateUrl: 'home', controller: "HomeCtrl")
+      $routeProvider.when(homeUrl, templateUrl: 'partials/home.html', controller: "MeteorCtrl")
       $routeProvider.otherwise(redirectTo: homeUrl)
       $locationProvider.html5Mode(true)
     ])
@@ -16,7 +12,7 @@ require(["angular", "ngMeteor", "underscore"], (angular, ngMeteor, _) ->
     constructor: (@name, @address) ->
       @isSelected = false
 
-  app.controller("AppCtrl", ["$scope", ($scope) ->
+  app.controller("MeteorCtrl", ["$scope", ($scope) ->
     $scope.menuItems = [
       new MenuItem("Home", homeUrl),
     ]
