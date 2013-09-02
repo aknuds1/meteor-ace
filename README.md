@@ -1,3 +1,3 @@
-## Me(e)tChuck
-A Web client for the Chuck audio programming language
+## Meteor-Ace
+A Meteor application integrating the [Ace](http://ace.c9.io/) editor.
 
