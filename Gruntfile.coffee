@@ -4,7 +4,7 @@ module.exports = (grunt) ->
     grunt.initConfig({})
 
     grunt.registerTask('install', 'Install dependencies', ->
-      shell.exec('npm install && bower install')
+      shell.exec('npm install && bower install && cd src && mrt install')
     )
 
     grunt.registerTask('meteor', 'Run development server', ->
