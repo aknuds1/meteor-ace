@@ -1,7 +1,6 @@
 {
   "packages": {
     "define": {},
-    "ace": {},
-    "angularjs": {}
+    "reactive-ace": {}
   }
 }
