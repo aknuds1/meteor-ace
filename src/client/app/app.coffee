@@ -19,7 +19,6 @@ require(["angular", "underscore"], (angular, _) ->
   ])
 
   app.controller("HomeCtrl", ["$scope", ($scope) ->
-    markSelected($scope, homeUrl)
     # TODO: Make into directive
     editor = new ReactiveAce()
     editorId = '#editor'
@@ -28,9 +27,4 @@ require(["angular", "underscore"], (angular, _) ->
       throw new Error('#{editorId} not found')
     editor.attach(elem)
   ])
-
-  markSelected = ($scope, url) ->
-    _($scope.menuItems).each((item) =>
-      item.isSelected = item.address == url
-    )
 )

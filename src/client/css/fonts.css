@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
+	src:url('/fonts/icomoon.eot');
+	src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/icomoon.woff') format('woff'),
+		url('/fonts/icomoon.ttf') format('truetype'),
+		url('/fonts/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-play, .icon-disk {
+.icon-disk, .icon-play, .icon-undo, .icon-redo {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -38,9 +38,15 @@ you can use the generic selector below, but it's slower:
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-play:before {
+.icon-disk:before {
 	content: "\e000";
 }
-.icon-disk:before {
+.icon-play:before {
 	content: "\e001";
+}
+.icon-undo:before {
+	content: "\e002";
+}
+.icon-redo:before {
+	content: "\e003";
 }
