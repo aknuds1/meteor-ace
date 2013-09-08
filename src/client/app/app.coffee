@@ -1,20 +1,23 @@
 require(["angular", "underscore"], (angular, _) ->
   homeUrl = "/"
 
-  app = angular.module('meteorapp', ['meteor', 'ui.ace'],
+  app = angular.module('meteorapp', ['meteor', 'ui.ace', 'app.directives'],
     ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
       $routeProvider.when(homeUrl, templateUrl: 'partials/home.html', controller: "MeteorCtrl")
       $routeProvider.otherwise(redirectTo: homeUrl)
       $locationProvider.html5Mode(true)
     ])
 
-  class MenuItem
-    constructor: (@name, @address) ->
-      @isSelected = false
+  class ToolButton
+    constructor: (@name, icon, enabled) ->
+      @icon = icon || @name
+      @disabled = !enabled
 
   app.controller("MeteorCtrl", ["$scope", ($scope) ->
-    $scope.menuItems = [
-      new MenuItem("Home", homeUrl),
+    $scope.toolbuttons = [
+      new ToolButton("save", "disk"),
+      new ToolButton("undo"),
+      new ToolButton("redo"),
     ]
   ])
 

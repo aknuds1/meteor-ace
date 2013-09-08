@@ -1,21 +1,19 @@
 <div class="content pure-g-r" data-ng-controller="MeteorCtrl">
     <header>
-        <nav id="menu" class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+        <div id="menu" class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
             <div class="pure-u-1-5">
                 <div class="pure-menu-heading">Meteor-Ace</div>
             </div>
 
-            <ul class="pure-u-4-5">
-                <li><a href=""><span class="icon-disk" style="color:white" aria-hidden="true"></span></a></li>
-                <li><a href=""><span class="icon-undo" style="color:white" aria-hidden="true"></span></a></li>
-                <li><a href=""><span class="icon-redo" style="color:white" aria-hidden="true"></span></a></li>
-            </ul>
-        </nav>
+            <div class="pure-u-4-5">
+                <toolbar toolbuttons="toolbuttons"></toolbar>
+            </div>
+        </div>
     </header>
 
     <article id="content">
         <div class="content-ribbon">
-                <div data-ng-view></div>
+            <div data-ng-view></div>
         </div>
         <footer class="pure-u-1">
             Made with the excellent <a href="http://meteor.com/">Meteor</a> framework and
