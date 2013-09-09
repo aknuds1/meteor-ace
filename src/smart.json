@@ -1,6 +1,5 @@
 {
   "packages": {
-    "define": {},
-    "reactive-ace": {}
+    "define": {}
   }
 }

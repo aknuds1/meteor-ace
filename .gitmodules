@@ -2,3 +2,6 @@
 [submodule "src/packages/angularjs"]
 	path = src/packages/angularjs
 	url = git@github.com:aknuds1/Meteor_angularjs.git
+[submodule "src/packages/meteor-ace"]
+	path = src/packages/meteor-ace
+	url = git@github.com:aknuds1/meteor-ace-1.git
