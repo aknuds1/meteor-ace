@@ -1,14 +1,18 @@
 require(["angular", "underscore", "ace.directives", "ace.services"], (angular, _) ->
-  homeUrl = "/"
-
-  app = angular.module('meteorapp', ['meteor', 'app.directives', 'ace.directives', 'ace.services'],
-    ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-      $routeProvider.when(homeUrl, templateUrl: 'partials/home.html', controller: "MeteorCtrl")
-      $routeProvider.otherwise(redirectTo: homeUrl)
-      $locationProvider.html5Mode(true)
-    ])
+  app = angular.module('meteorapp', ['meteor', 'app.directives', 'ace.directives', 'ace.services'], ->
+  )
 
   app.controller("MeteorCtrl", ["$scope", "aceManager", ($scope, aceManager) ->
+    class ToolButton
+      constructor: (@name, enabled, icon) ->
+        @icon = icon || @name
+        @enabled = $scope[enabled]
+        $scope.$watch(enabled, ->
+          value =  $scope[enabled]
+          console.log("Changed: #{enabled}: #{value}")
+          @enabled = value
+        )
+
     $scope.document = ""
     $scope.dirty = false
     $scope.canUndo = false
@@ -45,11 +49,4 @@ require(["angular", "underscore", "ace.directives", "ace.services"], (angular, _
       checkUndoState()
     )
   ])
-
-  app.controller("HomeCtrl", [->
-  ])
-
-  class ToolButton
-    constructor: (@name, @enabled, icon) ->
-      @icon = icon || @name
 )

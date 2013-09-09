@@ -6,14 +6,29 @@
             </div>
 
             <div class="pure-u-4-5">
-                <toolbar></toolbar>
+                <div class="toolbar">
+                    <toolbutton name="Save" icon="disk" enabled="dirty" clicked="toolbuttonClicked(name)"></toolbutton>
+                    <toolbutton name="Undo" icon="undo" enabled="canUndo" clicked="toolbuttonClicked(name)"></toolbutton>
+                    <toolbutton name="Redo" icon="redo" enabled="canRedo" clicked="toolbuttonClicked(name)"></toolbutton>
+                </div>
             </div>
         </div>
     </header>
 
     <article id="content">
         <div class="content-ribbon">
-            <div data-ng-view></div>
+            <div>
+                <div class="pure-u-1-5">
+                    <div id="sidebar">Sidebar Content</div>
+                </div>
+
+                <div class="pure-u-4-5">
+                    <div id="editor-container">
+                        <h1><a href="http://ace.c9.io/">Ace</a> Editor Demo</h1>
+                        <div data-ace="{mode: javascript}" data-ng-model="input" data-dirty="dirty"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <footer class="pure-u-1">
             Made with the excellent <a href="http://meteor.com/">Meteor</a> framework and

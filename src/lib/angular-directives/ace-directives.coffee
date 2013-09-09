@@ -1,5 +1,5 @@
 define('ace.directives', ['angular'], (angular) ->
-  angular.module('ace.directives', [])
+  angular.module('ace.directives', ["ace.services"])
     .directive('ace', ['aceManager', (aceManager)  ->
       if !window.ace?
         throw new Error("ace isn't included")
